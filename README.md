@@ -1,6 +1,7 @@
-#readme.txt
+# genesis-oik
+oik-plugins theme
 
-# Genesis Child Theme for oik-plugins with image.php and other single-CPT .php files
+* Genesis Child Theme for oik-plugins with image.php and other single-CPT .php files
 
 * Github project link: https://github.com/bobbingwide/genesis-oik
 
@@ -21,6 +22,4 @@
 * Added: First version, child theme of Genesis 2.1.2
 * Added: Some styling in style.css copied from oik410130c
 * Added: Other styling delivered in oik-custom.css - from oik-plugins.com
-
-
 
