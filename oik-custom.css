@@ -1,4 +1,6 @@
 /* (C) Copyright Bobbing Wide 2012-2015 */
+#adminmenu { transform: translateZ(0); } 
+
 div.textwidget img.bw_follow { width: 24px; }
 /* .art-postcontent */
  .sd-content ul>li:before { content: none; }
