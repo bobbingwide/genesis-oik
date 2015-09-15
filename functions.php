@@ -45,6 +45,7 @@ add_action( 'wp_ajax_send-attachment-to-editor', 'dont_attach', 0 );
  * Display footer credits for the oik theme
  */	
 function oik_footer_creds_text( $text ) {
+	do_action( "oik_add_shortcodes" );
 	$text = "[bw_wpadmin]";
   $text .= '<br />';
 	$text .= "[bw_copyright]"; 
@@ -76,6 +77,23 @@ function genesis_all( $tag, $args2=null ) {
 			$hooked = genesis_get_hooks( $tag );
 			_e_c( "$tag $hooked" );
 		}
+		if ( 0 === strpos( $tag, "the_excerpt" ) ) {
+			$hooked = genesis_get_hooks( $tag );
+			_e_c( "$tag $hooked" );
+		}
+		
+		if ( 0 === strpos( $tag, "the_content" ) ) {
+			$hooked = genesis_get_hooks( $tag );
+			_e_c( "$tag $hooked" );
+		}
+		
+		if ( 0 === strpos( $tag, "the_permalink" ) ) {
+			$hooked = genesis_get_hooks( $tag );
+			//_e_c( "$tag you what? $hooked" );
+			bw_trace2( $hooked, $tag );
+			bw_backtrace();
+		}
+		
 	} else {
 		if ( "genesis_doctype" === $tag ) {
 			$ok_to_e_c = true;
@@ -86,6 +104,14 @@ function genesis_all( $tag, $args2=null ) {
 /**
  * Return the attached hooks
  *
+ * Note: It's safe to use foreach over $wp_filter[ $tag ]
+ * since this routine's invoked for the 'all' hook
+ * not the hook in question.
+ * But I've copied the code for bw_trace_get_attached_hooks() anyway
+ * since it's more 'complete' 
+ *
+ * See {@link http://php.net/manual/en/control-structures.foreach.php}
+ *
  * @param string $tag the action hook or filter
  * @return string the attached hook information
  *
@@ -93,20 +119,32 @@ function genesis_all( $tag, $args2=null ) {
 function genesis_get_hooks( $tag ) {
 	global $wp_filter; 
   if ( isset( $wp_filter[ $tag ] ) ) {
+		$current_hooks = $wp_filter[ $tag ];
+		//bw_trace2( $current_hooks, "current hooks for $tag", false, BW_TRACE_VERBOSE );
 		$hooks = null;
-		foreach ( $wp_filter[ $tag ] as $priority => $functions ) {
+		foreach ( $current_hooks as $priority => $functions ) {
 			$hooks .= "\n: $priority  ";
 			foreach ( $functions as $index => $args ) {
 				$hooks .= " ";
-				if ( is_array( $args['function'] ) ) {
+				if ( is_object( $args['function' ] ) ) {
+					$object_name = get_class( $args['function'] );
+					$hooks .= $object_name; 
+
+				} elseif ( is_array( $args['function'] ) ) {
 					//bw_trace2( $args, "args" );
-					$object_name = get_class( $args['function'][0] );
+					if ( is_object( $args['function'][0] ) ) { 
+						$object_name = get_class( $args['function'][0] );
+					}	else {
+						$object_name = $args['function'][0];
+					}
 					$hooks .= $object_name . '::' . $args['function'][1];
 				} else {
 					$hooks .= $args['function'];
 				}
+				$hooks .= ";" . $args['accepted_args'];
 			}
 		}
+		
 	} else {
 		$hooks = null;
 	}
@@ -183,7 +221,13 @@ function genesis_oik_post_info() {
 /**
  * Display the sidebar for the given post type
  *
- * Note: uses oik_pluginversion for oik_premiumversion
+ * Normally we just append -widget-area but for some post types we override it 
+ *
+ * Post type  | Sidebar used
+ * ---------- | -------------
+ * oik_premiumversion | oik_pluginversion-widget-area
+ * oik_sc_param | sidebar-alt
+ * 
  * 
  */
 function genesis_oik_get_sidebar() {
@@ -195,10 +239,11 @@ function genesis_oik_get_sidebar() {
 	) );
 	do_action( 'genesis_before_sidebar_widget_area' );
 	$post_type = get_post_type();
-	if ( $post_type == "oik_premiumversion" ) {
-		$post_type = "oik_pluginversion";
-	}
-	dynamic_sidebar( "$post_type-widget-area" );
+	$cpts = array( "oik_premiumversion" => "oik_pluginversion-widget-area" 
+							 , "oik_sc_param" => "sidebar-alt"
+							 );
+	$dynamic_sidebar = bw_array_get( $cpts, $post_type, "$post_type-widget-area" ); 
+	dynamic_sidebar( $dynamic_sidebar );
 	do_action( 'genesis_after_sidebar_widget_area' );
 	genesis_markup( array(
 		'html5' => '</aside>', //* end .sidebar-primary
@@ -222,7 +267,7 @@ function genesis_oik_pre_get_option_site_layout( $layout, $setting ) {
 	if ( $artisteer_sidebar ) {	
 		$layout = __genesis_return_content_sidebar();
 	} else {
-		$layout = __genesis_return_full_width_content();
+		// $layout = __genesis_return_full_width_content();
 	}
 	return( $layout );
 }
