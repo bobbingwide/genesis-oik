@@ -40,7 +40,7 @@ function genesis_image_do_entry_content() {
 
 	$img = genesis_get_image( array(
 					'format'  => 'html',
-					'size'    => genesis_get_option( 'image_size' ),
+					'size'    => 'full', //genesis_get_option( 'image_size' ),
 					'context' => 'archive',
 					'attr'    => genesis_parse_attr( 'entry-image' ),
 					) );
