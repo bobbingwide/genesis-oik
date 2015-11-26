@@ -1,3 +1,10 @@
 /* (C) Copyright Bobbing Wide 2015 */
 /* Dummy custom.css for genesis-image theme */
+
+/* You probably want oik-custom.css - Herb 2015/11/26 */
+
+
+
 /* span.content { background-color: #fff; width: 100%; float: none; display: block; } */
+#adminmenu { transform: translateZ(0); }
+
