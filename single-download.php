@@ -2,7 +2,7 @@
 _e_c( __FILE__ );
 
 /**
- * Template file for the oik-plugins type
+ * Template file for the download type
  *
  * We do want:
  * - Title
