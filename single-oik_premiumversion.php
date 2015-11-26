@@ -1,8 +1,8 @@
 <?php // (C) Copyright Bobbing Wide 2015
-_e_c( __FILE__ );
+//_e_c( __FILE__ );
 
 /**
- * Template file for the oik-plugins type
+ * Template file for the oik_premiumversion type
  *
  * We do want:
  * - Title
