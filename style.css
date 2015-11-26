@@ -282,6 +282,7 @@ h6 {
 }
 
 body.hidden_title h1.entry-title { display: none; }
+body.hidden_entry_meta p.entry-meta { display: none; }
 
 /* ## Objects
 --------------------------------------------- */
@@ -1449,6 +1450,7 @@ li.comment {
 
 .site-footer {
 	background-color: #fff;
+	color: #1a1a2a;
 	font-size: 16px;
 	line-height: 1;
 	padding: 40px 0;
