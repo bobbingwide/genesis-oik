@@ -1,5 +1,6 @@
 /* (C) Copyright Bobbing Wide 2012-2015 */
 #adminmenu { transform: translateZ(0); } 
+div.bw_css code { display: block; }
 
 div.textwidget img.bw_follow { width: 24px; }
 /* .art-postcontent */
@@ -265,6 +266,34 @@ a.button.download.art-button:hover { color: #ffffff; }
 
 span.bw_plug { display: inline; }
 
+/**
+ * Styling for Black Friday and Cyber Monday
+ */
+.black,
+.black .entry,
+.black h1.entry-title ,
+.black h3 { 
+	color: white; 	
+	background-color: black; 
+	text-align: center;
+}
+.black h3 {  padding: 5px 5px 0px 5px;}
+/* 
+.black .entry { background-color: black; text-align: center;}
+h1.entry-title { color: white; }
+[/bw_css]
+*/
+
+
+/**
+ * EDD styling
+ */
+div.edd_cart_item_image { 
+	display: inline-block;
+	margin-right: 2%; 
+}
+
+// MEDIA MEDIA MEDIA MEDIA queries start here
 
 /*
  * -moz-     Firefox 
