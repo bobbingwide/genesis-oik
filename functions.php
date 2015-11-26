@@ -75,23 +75,23 @@ function genesis_all( $tag, $args2=null ) {
 	if ( $ok_to_e_c ) {
 		if ( 0 === strpos( $tag, "genesis_" ) ) {
 			$hooked = genesis_get_hooks( $tag );
-			_e_c( "$tag $hooked" );
+			genesis_safe_e_c( $tag, $hooked );
 		}
 		if ( 0 === strpos( $tag, "the_excerpt" ) ) {
 			$hooked = genesis_get_hooks( $tag );
-			_e_c( "$tag $hooked" );
+			genesis_safe_e_c( $tag, $hooked );
 		}
 		
 		if ( 0 === strpos( $tag, "the_content" ) ) {
 			$hooked = genesis_get_hooks( $tag );
-			_e_c( "$tag $hooked" );
+			genesis_safe_e_c( $tag, $hooked );
 		}
 		
 		if ( 0 === strpos( $tag, "the_permalink" ) ) {
 			$hooked = genesis_get_hooks( $tag );
-			//_e_c( "$tag you what? $hooked" );
-			bw_trace2( $hooked, $tag );
-			bw_backtrace();
+			genesis_safe_e_c( $tag, $hooked );
+			//bw_trace2( $hooked, $tag );
+			//bw_backtrace();
 		}
 		
 	} else {
@@ -99,6 +99,56 @@ function genesis_all( $tag, $args2=null ) {
 			$ok_to_e_c = true;
 		}
 	}
+}
+
+/**
+ * Only echo comments when safe
+ */
+function genesis_safe_e_c( $tag, $hooked ) {
+	static $deferred = null;
+	$hook_type = genesis_trace_get_hook_type( $tag );
+	if ( $hook_type === "action" ) {
+		if ( $deferred ) {
+			_e_c( "deferred $deferred" );
+			$deferred = null;
+		}
+		_e_c( "$hook_type $tag $hooked" );
+	
+	} else {
+		$deferred .= "\n";
+		$deferred .= "$hook_type $tag $hooked";
+	}
+}
+	
+/** 
+ * Return the hook type
+ * 
+ */ 
+function genesis_trace_get_hook_type( $hook ) {
+	global $wp_actions;
+	if ( isset( $wp_actions[ $hook ] ) ){
+		$type = "action";
+	} else {
+		$type = "filter";
+	}
+	return( $type );
+}
+
+/**
+ * Return the current filter summary
+ * 
+ * Even if current_filter exists the global $wp_current_filter may not be set
+ * 
+ * @return string current filter array imploded with commas
+ */
+function genesis_current_filter() {
+  global $wp_current_filter;
+  if ( is_array( $wp_current_filter ) ) { 
+	  $filters = implode( ",",  $wp_current_filter );
+	} else {
+	  $filters = null;
+	}		
+  return( $filters );  
 }
 
 /**
@@ -122,6 +172,8 @@ function genesis_get_hooks( $tag ) {
 		$current_hooks = $wp_filter[ $tag ];
 		//bw_trace2( $current_hooks, "current hooks for $tag", false, BW_TRACE_VERBOSE );
 		$hooks = null;
+		$hooks = genesis_current_filter();
+		$hooks .= "\n";
 		foreach ( $current_hooks as $priority => $functions ) {
 			$hooks .= "\n: $priority  ";
 			foreach ( $functions as $index => $args ) {
@@ -156,9 +208,8 @@ function genesis_get_hooks( $tag ) {
  *
  * @param string $string the text to echo inside the comment
  */
-
 function _e_c( $string ) {
-	echo "<!--";
+	echo "<!--\n";
 	echo $string;
 	echo "-->";
 }
@@ -196,10 +247,22 @@ function genesis_oik_register_sidebars() {
   }
 }
 
+function genesis_oik_edd() {
+
+	add_filter( "edd_checkout_image_size", "goik_edd_checkout_image_size", 10, 2 );
+}
+
+function goik_edd_checkout_image_size( $dimensions ) {
+	return( array( "auto", "auto" ) );
+}
+
+
 /**
  * Display the post info in our style
  *
  * We only want to display the post date and post modified date
+ * plus the post_edit link. 
+ * Note: The post edit link may appear multiple times
  *
  */
 function genesis_oik_post_info() {
@@ -212,7 +275,7 @@ function genesis_oik_post_info() {
 	$string = sprintf( __( 'Published %1$s', 'genesis-oik' ), '[post_date]' );
 	$string .= ' | ';
 	$string .= sprintf( __( 'Last updated %1$s', 'genesis-oik' ), '[post_modified_date]' );
-	$string .= ' [post_edit]';
+  $string .= ' [post_edit]';
 	$output .= apply_filters( 'genesis_post_info', $string);
 	$output .= genesis_html5() ? '</p>' : '</div>';  
 	echo $output;
@@ -241,6 +304,7 @@ function genesis_oik_get_sidebar() {
 	$post_type = get_post_type();
 	$cpts = array( "oik_premiumversion" => "oik_pluginversion-widget-area" 
 							 , "oik_sc_param" => "sidebar-alt"
+							 , "attachment" => "sidebar-alt"
 							 );
 	$dynamic_sidebar = bw_array_get( $cpts, $post_type, "$post_type-widget-area" ); 
 	dynamic_sidebar( $dynamic_sidebar );
@@ -312,8 +376,11 @@ function genesis_oik_functions_loaded() {
 	// Remove post info
 	remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
 	add_action( 'genesis_entry_footer', 'genesis_oik_post_info' );
+	//add_filter( "genesis_edit_post_link", "__return_false" );
 	
   genesis_oik_register_sidebars();
+	
+	genesis_oik_edd();
 
 }
 
