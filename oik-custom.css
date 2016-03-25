@@ -301,6 +301,15 @@ dl dl {
 	color: #555;
 }
 
+/**
+ * Give spans some padding in general except when within <pre> tags
+ */
+span { 
+	padding: 0px 3px; 
+}
+pre span { 
+	padding: 0px;
+}
 // MEDIA MEDIA MEDIA MEDIA queries start here
 
 /*
