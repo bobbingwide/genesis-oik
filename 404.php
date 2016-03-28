@@ -2,9 +2,13 @@
 
 /**
  * Output a 404 "Not Found" error message
+ * 
+ * Plugins should respond to "genesis_404" and decide whether or not to 
+ * handle the filters for entry_title and entry_content
  *
  */
 function genesis_oik_404() {
+	do_action( "genesis_404" );
 	echo '<article class="entry">';
   printf( '<h1 class="entry-title">%s</h1>', apply_filters( 'genesis_404_entry_title', __( 'Not found', 'genesis-oik' ) ) );
 	echo '<div class="entry-content">';
