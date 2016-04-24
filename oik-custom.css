@@ -302,9 +302,11 @@ dl dl {
 }
 
 /**
- * Give spans some padding in general except when within <pre> tags
+ * Give spans used in oik-shortcodes some padding in general except when within <pre> tags
+ * Note: It's not a good idea just style span as this affects quite a lot of other content, not just pre's. 
+ * 
  */
-span { 
+.hook span { 
 	padding: 0px 3px; 
 }
 pre span { 
