@@ -285,6 +285,8 @@ h1.entry-title { color: white; }
 */
 
 
+
+
 /**
  * EDD styling
  */
@@ -312,7 +314,7 @@ dl dl {
 pre span { 
 	padding: 0px;
 }
-// MEDIA MEDIA MEDIA MEDIA queries start here
+/* MEDIA MEDIA MEDIA MEDIA queries start here */
 
 /*
  * -moz-     Firefox 
@@ -501,11 +503,11 @@ table { font-size: 80%; }
   .alcs-3-header span.type { font-size: 70%; }
   .alcs-3-header div.textwidget img { width: 28px;  }
 
-div.w10pc, div.w20pc, div.w30pc, div.w40pc, div.w50pc, div.w60pc, div.w70pc, div.w80pc, div.w90pc {
-div.w30p5 
-div.w40p5 
-div.w50p5 
-div.w60p5
+div.w10pc, div.w20pc, div.w30pc, div.w40pc, div.w50pc, div.w60pc, div.w70pc, div.w80pc, div.w90pc,
+div.w30p5, 
+div.w40p5, 
+div.w50p5, 
+div.w60p5,
 div.w70p5 { float:left; width: 100%; padding-right: 0%; }
 
 }/*/mediaquery*/
@@ -598,4 +600,54 @@ div.us_tides { background-color: #ffffff; font-size: 120%; padding: 5px; border:
 div.bd-600 { min-height: 600px; }
 
 
+/* .wc-modal-shipping-method-settings form .form-table tr td input[type=checkbox]{min-width:16px;}  */
+
+
+
+/**
+ * Styling for woo-shipping
+ */
+.woo-shipping,
+.woo-shipping .entry,
+.woo-shipping h1.entry-title ,
+.woo-shipping h3 { 
+	color: white; 	
+	background-color: #96588a; 
+	text-align: center;
+}
+
+.woo-shipping h3 {  
+	padding: 5px 5px 0px 5px;
+}
  
+.woo-shipping #wtf {
+	color: #555555; 
+	background-color: #ffffff; 
+	text-align: center;
+}
+#wtf a.bw_link {
+	color: #96588a;
+}
+
+#wtf a.bw_link:hover {
+	text-decoration: underline;
+}
+
+article.oik-themes {
+	height: auto;
+    overflow: hidden;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+article.oik-themes img {
+	/* border: 1px solid grey; */
+	position: absolute;
+	left: 0;
+	top: 40px;
+	width: 100%;
+	
+}
+.content .oik-themes.entry {
+	/* background-color: #cccccc; */
+}

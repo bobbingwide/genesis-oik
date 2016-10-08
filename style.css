@@ -4,28 +4,13 @@ Theme URI: http://www.oik-plugins.com/oik-themes/genesis-oik
 Description: Child theme of genesis framework with oik and image.php
 Author: Bobbing Wide  
 Author URI: http://www.oik-plugins.com/author/bobbingwide
-Version: 1.0.2
+Version: 1.0.4
 Template: genesis 
-Template Version: 2.1.3  
+Template Version: 2.4.2 
 Tags: oik, plugins, themes, shortcodes 
 License: GPL-2.0+  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 */
-
-//import url("../genesis/style.css" );
-
-
-/**
- * Colour mapping from Genesis default to paap
- * 
- * | default color   |  oik color  | which is   | for what
- * |-----------------|------------- | ---------  | --------
- * | color: #333     |  #1A1A0A     | dark grey | body text
- * | color: #e5554e  |  #6A6A2A     | greeny  | links and menu items
- * | color: #e5554e | #
- */
-
-
 
 /* # Table of Contents
 - Imports
