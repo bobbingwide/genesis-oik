@@ -8,6 +8,11 @@
  *
  */
 function genesis_oik_404() {
+	/**
+	 * Indicate that the 404 page is about to be displayed
+	 *
+	 * @param string $noneactually this is just a test
+	 */
 	do_action( "genesis_404" );
 	echo '<article class="entry">';
   printf( '<h1 class="entry-title">%s</h1>', apply_filters( 'genesis_404_entry_title', __( 'Not found', 'genesis-oik' ) ) );

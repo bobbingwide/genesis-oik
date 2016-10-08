@@ -13,6 +13,18 @@ Github project link: https://github.com/bobbingwide/genesis-oik
 
 
 ## Change Log ##
+= 1.0.3 =
+* Added: Add 404 page to handle pragmatic links
+* Added: Add styling for nested definition lists
+* Added: Single attachment template
+* Changed: Improve genesistant logic and add special EDD logic
+* Changed: Improve span padding
+* Changed: Invoke 'genesis_404' on the 404 page
+* Changed: Re-enable archive.php using genesis()
+* Changed: Remove _e_c() call
+* Changed: Set colour for site-footer text
+* Changed: Support not found for oik shortcodes
+* Changed: Removed genesis_all() logic - use genesistant instead [github bobbingwide genesis-oik issue 2]
 
 = 1.0.2 = 
 * Add: Add temporary workaround for Chrome bug with the admin menu
