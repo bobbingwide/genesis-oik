@@ -633,21 +633,3 @@ div.bd-600 { min-height: 600px; }
 	text-decoration: underline;
 }
 
-article.oik-themes {
-	height: auto;
-    overflow: hidden;
-	margin-bottom: 10px;
-	position: relative;
-}
-
-article.oik-themes img {
-	/* border: 1px solid grey; */
-	position: absolute;
-	left: 0;
-	top: 40px;
-	width: 100%;
-	
-}
-.content .oik-themes.entry {
-	/* background-color: #cccccc; */
-}
