@@ -30,7 +30,7 @@
 }
 
 /* Enable images to appear to be the same height */
-.post-type-archive article:after {
+.post-type-archive-oik-themes article:after {
 	padding-top: 85%;
 	background-color: white;
 }

@@ -14,7 +14,8 @@ function genesis_oik_functions_loaded() {
 	define( 'CHILD_THEME_URL', 'http://www.bobbingwide.com/oik-themes/genesis-oik' );
 	define( 'CHILD_THEME_VERSION', '1.0.3' );
 	
-	// Start the engine	- @TODO Is this necessary?
+	// Start the engine. This is necessary if we want to use genesis_ APIs at initial load
+	// @TODO - determine if this can be deferred.
 	include_once( get_template_directory() . '/lib/init.php' );
 	
 	//* Add HTML5 markup structure
