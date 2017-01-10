@@ -1,4 +1,4 @@
-<?php // (C) Copyright Bobbing Wide 2015,2016
+<?php // (C) Copyright Bobbing Wide 2015-2017
 
 genesis_oik_functions_loaded();
 
@@ -47,13 +47,15 @@ function genesis_oik_functions_loaded() {
 	// Remove post info
 	remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
 	add_action( 'genesis_entry_footer', 'genesis_oik_post_info' );
-	add_filter( "genesis_edit_post_link", "__return_false" );
+	//add_filter( "genesis_edit_post_link", "__return_false" );
 
   genesis_oik_register_sidebars();
 	
 	genesis_oik_edd();
 	
   add_theme_support( 'woocommerce' );
+	
+	remove_action( 'wp_head', 'wp_custom_css_cb', 11 );
 
 }
 
