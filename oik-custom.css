@@ -633,3 +633,22 @@ div.bd-600 { min-height: 600px; }
 	text-decoration: underline;
 }
 
+
+
+
+.author-box div.gravatar span.label,
+.author-box div.gravatar span.sep,
+.author-box div.description span.label,
+.author-box div.description span.sep { 
+	display: none; 
+}
+
+/* 
+
+.author-box div.display_name span.sep:before {
+	content: "About";
+}
+*/
+	
+
+
