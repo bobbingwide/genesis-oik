@@ -15,7 +15,7 @@ if ( !is_home() ) {
 	remove_action( "genesis_entry_header", "genesis_do_post_title" );
 }
 
-add_action( "genesis_after_endwhile", "genesis_oik_a2z" );
+//add_action( "genesis_before_loop", "genesis_oik_a2z" );
 genesis();
 
 

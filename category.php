@@ -1,7 +1,7 @@
 <?php // (C) Copyright Bobbing Wide 2017
 
 /**
- * Implement a tighter loop for taxonomy archives
+ * Implement a tighter loop for the Category archive
  * 
  * Basically we don't want any content except the featured image
  * 
@@ -35,11 +35,14 @@ function genesis_oik_do_loop() {
  * Enqueue special styles for archives
  */
 function genesis_oik_after_footer() {
+ //bw_trace2();
+ //bw_backtrace();
+ 
  	$timestamp = null;
 	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
-		$timestamp = filemtime( get_stylesheet_directory() . "/taxonomy.css" );
+		$timestamp = filemtime( get_stylesheet_directory() . "/category.css" );
 	}
-	wp_enqueue_style( "taxonomy-css", get_stylesheet_directory_uri() . '/taxonomy.css', array() );
+ wp_enqueue_style( "category-css", get_stylesheet_directory_uri() . '/category.css', array() );
 }
 /*
  * Output from genesistant
@@ -77,8 +80,6 @@ add_action( "genesis_loop", "genesis_oik_do_loop" );
 //add_action( "genesis_after_footer", "genesis_oik_after_footer" );
 add_action( "wp_enqueue_scripts", "genesis_oik_after_footer" );
 
-//add_action( "genesis_after_endwhile", "genesis_oik_a2z", 9 );
 add_action( "genesis_before_loop", "genesis_oik_a2z", 9 );
-
 add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 genesis();

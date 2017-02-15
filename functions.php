@@ -294,10 +294,13 @@ function genesis_oik_wp_register_sidebar_widget( $widget ) {
  * Displays the A to Z pagination
  */
 function genesis_oik_a2z() {
-	echo "Letters:" ;
+	//echo "Letters:" ;
 	do_action( "oik_a2z_display" );
 }
 
+/**
+ * Displays the A to Z pagination for oik_letters
+ */
 function genesis_oik_a2z_letters() {
 	
 	do_action( "oik_a2z_display", "oik_letters" );

@@ -1,0 +1,61 @@
+/** (C) Copyright Bobbing Wide 2016-2017
+ * CSS for the (post_)tag archive
+ */
+ 
+.entry-title {
+	font-size: 18px;
+}
+ 
+
+
+.archive p {
+	margin: 0px;
+	padding: 0px;
+}
+
+.archive article {
+	width: 31.3333%; 
+	float: left;
+	padding: 2px 0.5%;
+	margin: 2px 0.5% 15px 0.5%;
+	position: relative; 
+}
+
+
+
+/* // (C) Copyright Bobbing Wide 2017
+ * Default styling for the oik-a2z pagination list
+ *
+ */
+ 
+div.a2z { 
+	width: 100%;
+}
+ 
+ul.a2z {
+	display: block;
+}
+
+ul.a2z li a span.count { 
+	display: none;
+}
+
+@media screen and ( max-width: 768px ) {
+
+.archive article {
+	width: 48%;
+}
+
+}
+
+
+
+
+@media screen and ( max-width: 480px ) {
+
+.archive article {
+	width: 98%;
+}
+
+}
+

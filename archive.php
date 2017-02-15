@@ -76,6 +76,8 @@ add_action( "genesis_loop", "genesis_oik_do_loop" );
 //add_action( "genesis_after_footer", "genesis_oik_after_footer" );
 add_action( "wp_enqueue_scripts", "genesis_oik_after_footer" );
 
-add_action( "genesis_after_endwhile", "genesis_oik_a2z_letters", 9 );
+add_action( "genesis_before_loop", "genesis_oik_a2z", 9 );
+
+add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 
 genesis();

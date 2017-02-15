@@ -1,12 +1,9 @@
 <?php // (C) Copyright Bobbing Wide 2017
-
 /**
- * Implement a tighter loop for taxonomy archives
+ * Implement a much tighter loop for the oik_letters taxonomy
  * 
- * Basically we don't want any content except the featured image
- * 
- * BUT 
- * one day we might look at {@link https://github.com/desandro/masonry}
+ * Basically we don't want any content except the title
+ * and the oik_letters A-Z selection
  * 
  */
 function genesis_oik_do_loop() {
@@ -34,12 +31,10 @@ function genesis_oik_do_loop() {
 /**
  * Enqueue special styles for archives
  */
-function genesis_oik_after_footer() {
- 	$timestamp = null;
-	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
-		$timestamp = filemtime( get_stylesheet_directory() . "/taxonomy.css" );
-	}
-	wp_enqueue_style( "taxonomy-css", get_stylesheet_directory_uri() . '/taxonomy.css', array() );
+function genesis_oik_wp_enqueue_scripts() {
+ //bw_trace2();
+ //bw_backtrace();
+ wp_enqueue_style( "oik_letters-css", get_stylesheet_directory_uri() . '/oik_letters.css', array() );
 }
 /*
  * Output from genesistant
@@ -57,7 +52,6 @@ function genesis_oik_after_footer() {
  * : 12   genesis_do_post_content_nav;1
  * : 14   genesis_do_post_permalink;1--> 
  */
-remove_action( "genesis_entry_content", "genesis_do_post_image", 8 );
 remove_action( "genesis_entry_content", "genesis_do_post_content", 10 );
 remove_action( "genesis_entry_content", "genesis_do_post_content_nav", 12 ); 
 remove_action( "genesis_entry_content", "genesis_do_post_permalink", 14 );
@@ -75,10 +69,7 @@ add_action( "genesis_loop", "genesis_oik_do_loop" );
 
 
 //add_action( "genesis_after_footer", "genesis_oik_after_footer" );
-add_action( "wp_enqueue_scripts", "genesis_oik_after_footer" );
+add_action( "wp_enqueue_scripts", "genesis_oik_wp_enqueue_scripts" );
 
-//add_action( "genesis_after_endwhile", "genesis_oik_a2z", 9 );
-add_action( "genesis_before_loop", "genesis_oik_a2z", 9 );
-
-add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
+add_action( "genesis_before_loop", "genesis_oik_a2z_letters", 9 );
 genesis();

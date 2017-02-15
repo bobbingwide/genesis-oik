@@ -1,4 +1,4 @@
-<?php // (C) Copyright Bobbing Wide 2015,2016
+<?php // (C) Copyright Bobbing Wide 2015-2017
 /**
  * Template file for the "post" post type
  *
@@ -14,9 +14,7 @@
  * We don't want:
  * - Post info from meta data
  * - Published by
- * - Breadcrumbs
  */
- 
 function genesis_oik_single_post() {
 	add_theme_support( 'html5' );
 	
@@ -33,7 +31,7 @@ function genesis_oik_single_post() {
 	//remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 
 	add_action( 'genesis_entry_footer', 'genesis_post_meta' );
-	add_action( 'genesis_entry_footer', 'genesis_oik_a2z' );
+	add_action( 'genesis_before_content', 'genesis_oik_a2z' );
 	
 
 	//bw_disable_filter( 'genesis_edit_post_link', 
@@ -53,22 +51,5 @@ function genesis_oik_single_post() {
 
 	add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_content_sidebar' );
 }
-
-/**
-$parent_id = wp_get_post_parent_id( null );
-if ( $parent_id ) {
-	bw_trace2( $parent_id );
-	$post_type = get_post_type( $parent_id );
-	if ( $post_type === "oik_premiumversion" || $post_type === "oik_themiumversion" ) {
-		remove_action( "the_content", "prepend_attachment" );
-	}
-} 
-
-//e( $post_type );
-
-*/
-
 genesis_oik_single_post();
-
-
 genesis();
