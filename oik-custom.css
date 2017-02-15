@@ -60,6 +60,10 @@ span.page-numbers.current {
 
 span.bw_follow_me:hover { 
 	color: #5b5f13;
+	/* background-color: #e6e6e6; */
+}
+a span.bw_follow_me {
+	color: #eeeeee;
 }	
 
 
@@ -314,6 +318,13 @@ dl dl {
 pre span { 
 	padding: 0px;
 }
+
+
+
+ul.a2z li a span.count { 
+	display: none;
+}
+
 /* MEDIA MEDIA MEDIA MEDIA queries start here */
 
 /*

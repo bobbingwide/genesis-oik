@@ -1,4 +1,4 @@
-/** (C) Copyright Bobbing Wide 2016
+/** (C) Copyright Bobbing Wide 2016-2017
  */
  
 
@@ -64,6 +64,24 @@ h2.entry-title {
 
 article header:hover {
 	/* background-color: #eeeeee; */
+}
+
+
+/* // (C) Copyright Bobbing Wide 2017
+ * Default styling for the oik-a2z pagination list
+ *
+ */
+ 
+div.a2z { 
+	width: 100%;
+}
+ 
+ul.a2z {
+	display: block;
+}
+
+ul.a2z li a span.count { 
+	display: none;
 }
 
 @media screen and ( max-width: 768px ) {

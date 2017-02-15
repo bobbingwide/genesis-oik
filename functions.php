@@ -12,7 +12,13 @@ function genesis_oik_functions_loaded() {
 	//* Child theme (do not remove) - is this really necessary? 
 	define( 'CHILD_THEME_NAME', 'Genesis OIK' );
 	define( 'CHILD_THEME_URL', 'http://www.bobbingwide.com/oik-themes/genesis-oik' );
-	define( 'CHILD_THEME_VERSION', '1.0.3' );
+	
+	if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+		$timestamp = filemtime( get_stylesheet_directory() . "/style.css" );
+		define( 'CHILD_THEME_VERSION', $timestamp );
+	} else { 
+		define( 'CHILD_THEME_VERSION', '1.0.3' );
+	}
 	
 	// Start the engine. This is necessary if we want to use genesis_ APIs at initial load
 	// @TODO - determine if this can be deferred.
@@ -56,6 +62,8 @@ function genesis_oik_functions_loaded() {
   add_theme_support( 'woocommerce' );
 	
 	remove_action( 'wp_head', 'wp_custom_css_cb', 11 );
+	//add_filter( 'sidebars_widgets', 'genesis_oik_sidebars_widgets' );
+	//add_action( 'wp_register_sidebar_widget', 'genesis_oik_wp_register_sidebar_widget' );
 
 }
 
@@ -260,6 +268,39 @@ function _e_c( $string ) {
 	echo $string;
 	echo "-->";
 }
+}
+
+
+function genesis_oik_sidebars_widgets( $widgets ) {
+	//unset( $widgets[ 'wp_inactive_widgets' ] );
+	bw_trace2( $widgets );
+	bw_backtrace();
+	//gob();
+	return( $widgets );
+}
+
+function genesis_oik_wp_register_sidebar_widget( $widget ) {
+	global $wp_registered_widgets;
+	global $_wp_sidebars_widgets;
+	if ( $widget[ 'id' ] == 'text-96' ) {
+		bw_backtrace();
+		bw_trace2( $wp_registered_widgets, "wp_registered_widgets" );
+		bw_trace2( $_wp_sidebars_widgets, "_wp_sidebars_widgets" );
+	}
+	
+}
+
+/**
+ * Displays the A to Z pagination
+ */
+function genesis_oik_a2z() {
+	echo "Letters:" ;
+	do_action( "oik_a2z_display" );
+}
+
+function genesis_oik_a2z_letters() {
+	
+	do_action( "oik_a2z_display", "oik_letters" );
 }
 
 
