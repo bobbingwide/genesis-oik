@@ -39,7 +39,7 @@ function genesis_oik_after_footer() {
 	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
 		$timestamp = filemtime( get_stylesheet_directory() . "/taxonomy.css" );
 	}
-	wp_enqueue_style( "taxonomy-css", get_stylesheet_directory_uri() . '/taxonomy.css', array() );
+	wp_enqueue_style( "taxonomy-css", get_stylesheet_directory_uri() . '/taxonomy.css', array(), $timestamp );
 }
 /*
  * Output from genesistant

@@ -18,6 +18,16 @@
 	padding: 2px 0.5%;
 	margin: 2px 0.5% 15px 0.5%;
 	position: relative; 
+	border: 1px solid #e0e0e0;
+	box-sizing: border-box;
+}
+
+.archive .entry {
+	background-color: #f0f0f0;
+}
+
+.archive article:nth-of-type(3n+1) { 
+	clear: both;
 }
 
 

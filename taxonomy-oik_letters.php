@@ -29,12 +29,14 @@ function genesis_oik_do_loop() {
 }
 
 /**
- * Enqueue special styles for archives
+ * Enqueue special styles for oik_letters
  */
 function genesis_oik_wp_enqueue_scripts() {
- //bw_trace2();
- //bw_backtrace();
- wp_enqueue_style( "oik_letters-css", get_stylesheet_directory_uri() . '/oik_letters.css', array() );
+	$timestamp = null;
+	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
+		$timestamp = filemtime( get_stylesheet_directory() . "/archive.css" );
+	}
+	wp_enqueue_style( "oik_letters-css", get_stylesheet_directory_uri() . '/oik_letters.css', array(), $timestamp );
 }
 /*
  * Output from genesistant
@@ -72,4 +74,5 @@ add_action( "genesis_loop", "genesis_oik_do_loop" );
 add_action( "wp_enqueue_scripts", "genesis_oik_wp_enqueue_scripts" );
 
 add_action( "genesis_before_loop", "genesis_oik_a2z_letters", 9 );
+add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 genesis();
