@@ -11,9 +11,27 @@
 .archive article {
 	width: 31.3333%; 
 	float: left;
-	padding: 2px 0.5%;
+	padding: 1px 0.5%;
 	margin: 2px 0.5% 15px 0.5%;
 	position: relative; 
+	border: 1px solid #e0e0e0;
+	box-sizing: border-box;
+}
+
+
+.archive .entry {
+	background-color: #f0f0f0;
+}
+
+
+.archive article:hover {
+	border: 1px solid grey;
+	background: #e2e2e2;
+}
+
+
+.archive article:nth-of-type(3n+1) { 
+	clear: both;
 }
 
 /* // (C) Copyright Bobbing Wide 2017
