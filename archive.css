@@ -24,9 +24,27 @@
 .post-type-archive article {
 	width: 31.3333%; 
 	float: left;
-	padding: 2px 0.5%;
+	padding: 1px 0.5%;
 	margin: 2px 0.5% 15px 0.5%;
 	position: relative; 
+	border: 1px solid #e0e0e0;
+	box-sizing: border-box;
+}
+
+
+.archive .entry {
+	background-color: #f0f0f0;
+}
+
+
+.post-type-archive article:hover {
+	border: 1px solid grey;
+	background: #e2e2e2;
+}
+
+
+.post-type-archive article:nth-of-type(3n+1) { 
+	clear: both;
 }
 
 /* Enable images to appear to be the same height */
@@ -50,6 +68,17 @@ article.oik-themes img {
 	width: 100%;
 	
 }
+
+article.oik-plugins a.entry-image-link {
+	width: 100%;
+	text-align: center;
+	display: block;
+}
+
+article.oik-plugins img {
+	margin: 0 auto;
+}
+
 .content .oik-themes.entry {
 	/* background-color: #cccccc; */
 }

@@ -64,6 +64,8 @@ function genesis_oik_functions_loaded() {
 	remove_action( 'wp_head', 'wp_custom_css_cb', 11 );
 	//add_filter( 'sidebars_widgets', 'genesis_oik_sidebars_widgets' );
 	//add_action( 'wp_register_sidebar_widget', 'genesis_oik_wp_register_sidebar_widget' );
+	
+	add_filter( "the_title", "genesis_oik_the_title", 9, 2 );
 
 }
 
@@ -305,5 +307,46 @@ function genesis_oik_a2z_letters() {
 	
 	do_action( "oik_a2z_display", "oik_letters" );
 }
+
+
+/**
+ * Implement 'the_title' for genesis-oik
+ * 
+ * We want to wrap the Summary in a span tag with class="summary"
+ * 
+ * We cater for the fact that the following filters may be applied 
+ * by implementing our filter before these.
+ * `
+ * : 10   wptexturize;1 convert_chars;1 trim;1 do_shortcode;1
+ * : 11   capital_P_dangit;1
+ * `
+ * 
+ * Find   | Convert to
+ * ------ | ----------
+ * func() - blah | func() span - blah espan 
+ * this - that | this span- that espan
+ *
+ * 
+ * Note: We don't expect both '()' and '-' in the text 
+ * 	
+ * @param string $text the post title being filtered
+ * @param ID $id post ID 
+ * @return string
+ */
+function genesis_oik_the_title( $text, $id ) {
+	//bw_trace2();
+	$pos = strpos( $text, "() " );
+	if ( $pos ) {
+		$text = str_replace( "() ", '() <span class="summary">', $text );
+		$text .= "</span>";
+	}	else {
+		$pos = strpos( $text, " - " );
+		if ( $pos ) {
+			$text = str_replace( " - ", ' <span class="summary">- ', $text );
+			$text .= "</span>";
+		}
+	}	
+	return( $text );
+} 
 
 
