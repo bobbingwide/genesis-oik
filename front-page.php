@@ -1,6 +1,6 @@
 <?php // (C) Copyright Bobbing Wide 2015-2017
 /**
- * Template file for the home page
+ * Template file for the front-page which may also be the home page.
  *
  * We don't want:
  * - Title
@@ -16,6 +16,25 @@ if ( !is_home() ) {
 }
 
 //add_action( "genesis_before_loop", "genesis_oik_a2z" );
+
+
+
+//add_action( "genesis_after_footer", "genesis_oik_after_footer" );
+add_action( "wp_enqueue_scripts", "genesis_oik_after_footer" );
+
+add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 genesis();
+
+
+/**
+ * Enqueue special styles for archives
+ */
+function genesis_oik_after_footer() {
+ 	$timestamp = null;
+	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
+		$timestamp = filemtime( get_stylesheet_directory() . "/archive.css" );
+	}
+	wp_enqueue_style( "archive-css", get_stylesheet_directory_uri() . '/archive.css', array(), $timestamp );
+}
 
 
