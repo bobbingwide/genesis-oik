@@ -34,7 +34,7 @@ function genesis_oik_do_loop() {
 function genesis_oik_wp_enqueue_scripts() {
 	$timestamp = null;
 	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
-		$timestamp = filemtime( get_stylesheet_directory() . "/archive.css" );
+		$timestamp = filemtime( get_stylesheet_directory() . "/oik_letters.css" );
 	}
 	wp_enqueue_style( "oik_letters-css", get_stylesheet_directory_uri() . '/oik_letters.css', array(), $timestamp );
 }

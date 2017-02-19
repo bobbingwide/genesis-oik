@@ -296,16 +296,49 @@ function genesis_oik_wp_register_sidebar_widget( $widget ) {
  * Displays the A to Z pagination
  */
 function genesis_oik_a2z() {
-	//echo "Letters:" ;
-	do_action( "oik_a2z_display" );
+	$args = genesis_oik_a2z_display_args();
+	$taxonomy = genesis_oik_a2z_query_letter_taxonomy( "letters", $args );
+	do_action( "oik_a2z_display", $taxonomy, $args );
+}
+
+/**
+ * Determines the args to pass to oik_a2z_display
+ */
+function genesis_oik_a2z_display_args() {
+	$args = array();
+	if ( is_archive() ) {
+		$post_type = get_query_var( "post_type" );
+		$args['post_type'] = $post_type;
+	}
+	return( $args );
+}
+
+/**
+ * Returns the Letter taxonomy associated to the post type
+ * 
+ * If post_type is not set then we return the 
+ */ 
+function genesis_oik_a2z_query_letter_taxonomy( $taxonomy, $args ) {
+	$post_type = bw_array_get( $args, "post_type", null );
+	if ( $post_type ) {
+		$oik_letters = array( "oik_shortcodes" => "oik_letters"
+												, "oik_api" => "oik_letters"
+												, "oik_class" => "oik_letters"
+												, "oik_file" => "oik_letters"
+												, "oik_hook" => "oik_letters"
+												);
+		$taxonomy = bw_array_get( $oik_letters, $post_type, $taxonomy );
+	}
+	return( $taxonomy );
 }
 
 /**
  * Displays the A to Z pagination for oik_letters
  */
 function genesis_oik_a2z_letters() {
-	
-	do_action( "oik_a2z_display", "oik_letters" );
+	$args = genesis_oik_a2z_display_args();
+	$taxonomy = genesis_oik_a2z_query_letter_taxonomy( "oik_letters", $args );
+	do_action( "oik_a2z_display", $taxonomy, $args );
 }
 
 
