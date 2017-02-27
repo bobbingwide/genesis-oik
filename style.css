@@ -503,6 +503,10 @@ td img { max-width: 14px; }
 	padding-top: 0px;
 }
 
+.home .site-inner {
+	margin-top: 20px;
+}
+
 /* ## Column Widths and Positions
 --------------------------------------------- */
 
