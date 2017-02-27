@@ -228,6 +228,7 @@ function genesis_oik_get_sidebar() {
 	$cpts = array( "oik_premiumversion" => "oik_pluginversion-widget-area" 
 							 , "oik_sc_param" => "sidebar-alt"
 							 , "attachment" => "sidebar-alt"
+							 , "post" => "sidebar"
 							 );
 	$dynamic_sidebar = bw_array_get( $cpts, $post_type, "$post_type-widget-area" ); 
 	dynamic_sidebar( $dynamic_sidebar );
