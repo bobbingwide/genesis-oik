@@ -2,7 +2,6 @@
  */
  
 .post-type-archive h2,
-.post-type-archive-oik-themes h2,
 .post-type-archive-oik-plugins h2,
 .post-type-archive-oik_request h2 { 
 	font-size: 18px;
@@ -38,7 +37,7 @@
 	width: 31.3333%; 
 	float: left;
 	padding: 1px 0.5%;
-	margin: 2px 0.5% 15px 0.5%; 
+	margin: 2px 0.5% 15px 0.5%;
 	position: relative; 
 	border: 1px solid #e0e0e0;
 	box-sizing: border-box;
@@ -61,19 +60,15 @@
 	clear: both;
 }
 
-/* Enable images to appear to be the same height 
+/* Enable images to appear to be the same height */
 .post-type-archive-oik-themes article:after {
 	padding-top: 85%;
 	background-color: white;
-	display: block;
-	content: " ";
-	overflow: hidden;
 }
-*/
 
 article.oik-themes {
 	height: auto;
-  /*  overflow: hidden;	 */
+    overflow: hidden;
 	margin-bottom: 10px;
 	position: relative;
  /* border: 1px solid #ffffff; */
@@ -89,7 +84,7 @@ article.oik-themes img {
 
 article.oik-plugins a.entry-image-link {
 	width: 100%;
-	/* text-align: center; */
+	text-align: center;
 	display: block;
 }
 
@@ -133,77 +128,15 @@ ul.a2z {
 ul.a2z li a span.count { 
 	display: none;
 }
-		article .oik-themes,
-		article .oik-plugins {
-        position: relative;
-        overflow: hidden;
-    }
-		.oik-themes header,
-		.oik-plugins header { 
-        position: absolute;
-        width: 100%;
-        overflow: hidden;
-        top: 0;
-        bottom: 0;
-       
-    }
-		.oik-themes:after,
-    .oik-plugins:after {
-        padding-top: 40%;
+
+
+   article:after {
+        padding-top: 0%;
         display: block;
         content: " ";  
         overflow: hidden;
 
     }
-    .oik-plugins h2,
-		.oik-themes h2,
-    .oik-plugins a,
-		.oik-themes a,
-    .oik-plugins img,
-		.oik-themes img { 
-        position: absolute;
-        width: 100%;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        display: block;
-             }
-     
-     .oik-plugins img,
-		 .oik-themes img { 
-        top: 30px; 
-        bottom: 0px;
-        z-index: 2;
-        overflow: hidden;
-      }
-			
-.oik-themes h2,
-.oik-plugins h2 {
-        top: 8px;
-        /* bottom: 0px; */
-        display: block; 
-				
-        } 
-      .oik-plugins a,
-			.oik-themes a  {
-                overflow: hidden;
-        display: block;
-        top: 0;
-        bottom: 0;
-       }
-			 
-	.oik-themes:after {
-		padding-top: 85%
-	}
-	.oik-plugins:after {
-		padding-top: 40%
-	}
-			 
-article .entry-content {
-	position: relative;
-	display: block;
-}
-
 @media screen and ( max-width: 768px ) {
 
 .post-type-archive article {
