@@ -2,9 +2,9 @@
 Contributors: bobbingwide
 Donate link: http://www.oik-plugins.com/oik/oik-donate/
 Tags: genesis, one-column, two-columns, sidebars, responsive-layout, accessibility-ready, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments
-Requires at least: 4.6
-Tested up to: 4.7-beta3
-Version: 1.0.4
+Requires at least: 4.6.3
+Tested up to: 4.7.2
+Version: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,15 @@ genesis-oik is a child theme for the Genesis Theme Framework
 
 
 == Change Log ==
+= 1.0.5 =
+* Added: Single post templates with A to Z pagination [github bobbingwide genesis-oik issue 7]
+* Added: Support for A to Z pagination [github bobbingwide genesis-oik issue 6]
+* Changed: Add styling for Author box created using [bw_user class=author-box fields=gravatar,name,description]
+* Changed: Align secondary nav menu with the content that follows
+* Changed: Disable WordPress 4.7 custom.css [github bobbingwide genesis-oik issues 5]
+* Changed: Improve styling on archive and taxonomy pages [github bobbingwide genesis-oik issue 8]
+* Changed: Style the span.summary at 90% normal size
+
 = 1.0.4 = 
 * Changed: Improve styling on iPad and iPhone 4
 * Changed: Move archive styling into archive.css
@@ -64,7 +73,7 @@ genesis-oik is a child theme for the Genesis Theme Framework
 * Added: Other styling delivered in oik-custom.css - from oik-plugins.com
 
 == Copyright ==
-(C) Copyright Bobbing Wide 2015,2016
+(C) Copyright Bobbing Wide 2015-2017
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -80,7 +89,7 @@ genesis-oik does not bundle third-party resources.
 
 == Notes ==
 * Dependent upon the Genesis Theme Framework
-* Uses genesis-footer-widgets and other oik plugins.
+* Uses genesis-footer-widgets, oik-a2z, oik-shortcodes-a2z and other oik plugins.
  
 
 

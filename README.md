@@ -1,21 +1,24 @@
 # genesis-oik 
-![screenshot](https://raw.githubusercontent.com/bobbingwide/genesis-oik/master/screenshot.jpg)
+![screenshot](https://raw.githubusercontent.com/bobbingwide/genesis-oik/master/screenshot.png)
 * Contributors: bobbingwide
 * Donate link: http://www.oik-plugins.com/oik/oik-donate/
 * Tags: genesis, one-column, two-columns, sidebars, responsive-layout, accessibility-ready, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments
-* Requires at least: 4.6
-* Tested up to: 4.7-beta3
-* Version: 1.0.4
+* Requires at least: 4.6.3
+* Tested up to: 4.7.2
+* Version: 1.0.5
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Genesis Child Theme for oik-plugins and selected bobbingwide websites
+Genesis Child Theme for oik-plugins and selected bobbing wide websites
 
 ## Description 
-genesis-hehall is a child theme for the Genesis Theme Framework,
+genesis-oik is a child theme for the Genesis Theme Framework
 
-* with a front-page implementing parallax scrolling
-* and a responsive menu
+* page layouts and widgets areas for custom post types
+* page layouts for archives
+* special 404 page
+* image.php - as in genesis-image
+* front-page does not display the title
 
 ## Installation 
 
@@ -29,6 +32,15 @@ genesis-hehall is a child theme for the Genesis Theme Framework,
 
 
 ## Change Log 
+# 1.0.5 
+* Added: Single post templates with A to Z pagination https://github.com/bobbingwide/genesis-oik/issues/7
+* Added: Support for A to Z pagination https://github.com/bobbingwide/genesis-oik/issues/6
+* Changed: Add styling for Author box created using [bw_user class=author-box fields=gravatar,name,description]
+* Changed: Align secondary nav menu with the content that follows
+* Changed: Disable WordPress 4.7 custom.css https://github.com/bobbingwide/genesis-oik/issues/5
+* Changed: Improve styling on archive and taxonomy pages https://github.com/bobbingwide/genesis-oik/issues/8
+* Changed: Style the span.summary at 90% normal size
+
 # 1.0.4 
 * Changed: Improve styling on iPad and iPhone 4
 * Changed: Move archive styling into archive.css
@@ -44,7 +56,7 @@ genesis-hehall is a child theme for the Genesis Theme Framework,
 * Changed: Remove _e_c() call
 * Changed: Set colour for site-footer text
 * Changed: Support not found for oik shortcodes
-* Changed: Removed genesis_all() logic - use genesistant instead [github bobbingwide genesis-oik issue 2]
+* Changed: Removed genesis_all() logic - use genesistant instead https://github.com/bobbingwide/genesis-oik/issues/2
 
 # 1.0.2 
 * Add: Add temporary workaround for Chrome bug with the admin menu
@@ -62,7 +74,7 @@ genesis-hehall is a child theme for the Genesis Theme Framework,
 * Added: Other styling delivered in oik-custom.css - from oik-plugins.com
 
 ## Copyright 
-(C) Copyright Bobbing Wide 2015,2016
+(C) Copyright Bobbing Wide 2015-2017
 
 * This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -78,7 +90,7 @@ genesis-oik does not bundle third-party resources.
 
 ## Notes 
 * Dependent upon the Genesis Theme Framework
-* Uses genesis-footer-widgets and other oik plugins.
+* Uses genesis-footer-widgets, oik-a2z, oik-shortcodes-a2z and other oik plugins.
 
 
 
