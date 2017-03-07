@@ -665,6 +665,10 @@ div.bd-600 { min-height: 600px; }
 	content: "About";
 }
 */
+
+.bw_accordion .ui-widget-content a.bw_link {
+	color: #6a6a2a; 
+}
 	
 
 
