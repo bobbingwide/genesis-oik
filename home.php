@@ -26,9 +26,10 @@ genesis();
  * Enqueue special styles for oik_letters
  */
 function genesis_oik_wp_enqueue_scripts() {
+	
 	$timestamp = null;
 	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
-		$timestamp = filemtime( get_stylesheet_directory() . "/archive.css" );
+		$timestamp = filemtime( get_stylesheet_directory() . "/front-page.css" );
 	}
-	wp_enqueue_style( "archive-css", get_stylesheet_directory_uri() . '/archive.css', array(), $timestamp );
+	wp_enqueue_style( "front-page-css", get_stylesheet_directory_uri() . '/front-page.css', array(), $timestamp );
 }
