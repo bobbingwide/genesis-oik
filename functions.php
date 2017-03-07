@@ -62,6 +62,7 @@ function genesis_oik_functions_loaded() {
   add_theme_support( 'woocommerce' );
 	
 	remove_action( 'wp_head', 'wp_custom_css_cb', 11 );
+	remove_action( 'wp_head', 'wp_custom_css_cb', 101 );
 	//add_filter( 'sidebars_widgets', 'genesis_oik_sidebars_widgets' );
 	//add_action( 'wp_register_sidebar_widget', 'genesis_oik_wp_register_sidebar_widget' );
 	
