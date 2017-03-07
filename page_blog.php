@@ -3,8 +3,11 @@
  * Template Name: Blog
  *
  * The blog page loop logic is located in Genesis lib/structure/loops.php.
+ * 
  * Here we override the Blog page so that it can be assigned to a particular page as a template.
- * We also make it look a bit more like the A to Z archive pages
+ 
+ * We also make it look a bit more like the A to Z archive pages.
+ 
  * 
  *
  */
@@ -16,9 +19,9 @@
 function genesis_oik_after_footer() {
  	$timestamp = null;
 	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
-		$timestamp = filemtime( get_stylesheet_directory() . "/archive.css" );
+		$timestamp = filemtime( get_stylesheet_directory() . "/front-page.css" );
 	}
-	wp_enqueue_style( "archive-css", get_stylesheet_directory_uri() . '/archive.css', array(), $timestamp );
+	wp_enqueue_style( "front-page-css", get_stylesheet_directory_uri() . '/front-page.css', array(), $timestamp );
 }
 
 
