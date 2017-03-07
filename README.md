@@ -5,7 +5,7 @@
 * Tags: genesis, one-column, two-columns, sidebars, responsive-layout, accessibility-ready, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments
 * Requires at least: 4.6.3
 * Tested up to: 4.7.2
-* Version: 1.0.5
+* Version: 1.0.6
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,6 +32,10 @@ genesis-oik is a child theme for the Genesis Theme Framework
 
 
 ## Change Log 
+# 1.0.6 
+* Changed: Upgraded to slightly customised version of jQuery UI v1.12.1 copying missing images https://github.com/bobbingwide/genesis-oik/issues/4
+* Fixed: Added tests to confirm removal of logic that's now in genesistant https://github.com/bobbingwide/genesis-oik/issues/3
+
 # 1.0.5 
 * Added: Single post templates with A to Z pagination https://github.com/bobbingwide/genesis-oik/issues/7
 * Added: Support for A to Z pagination https://github.com/bobbingwide/genesis-oik/issues/6
