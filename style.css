@@ -1631,6 +1631,10 @@ li.comment {
 	.footer-widgets-5 {
 		width: 100%;
 	}
+	
+	.archive-pagination li a {
+		font-family: "Lucida Console", Monaco, monospace;
+	}
 
 
 }
