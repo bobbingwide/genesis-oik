@@ -1622,6 +1622,15 @@ li.comment {
 	
 	span.splitbar { display:none;  }
 	span.lastupdated { display: block; clear: both; }
+	
+
+	.footer-widgets-1,
+	.footer-widgets-2,
+	.footer-widgets-3,
+	.footer-widgets-4,
+	.footer-widgets-5 {
+		width: 100%;
+	}
 
 
 }
