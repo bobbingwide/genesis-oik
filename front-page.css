@@ -1,5 +1,15 @@
 /** (C) Copyright Bobbing Wide 2016-2017
+ * Styling for the front-page and blog page
  */
+ 
+.blog article {
+	float: left;
+	padding: 1px 0.5%;
+	margin: 2px 0.5% 15px 0.5%;
+	position: relative; 
+	box-sizing: border-box;
+	border-top: 1px solid #e0e0e0;
+}
  
 .post-type-archive h2,
 .post-type-archive-oik-plugins h2,
@@ -31,17 +41,6 @@
 	padding: 0px;
 }
 
-.blog article,
-.page-template-page_blog article, 
-.post-type-archive article {
-	width: 31.3333%; 
-	float: left;
-	padding: 1px 0.5%;
-	margin: 2px 0.5% 15px 0.5%;
-	position: relative; 
-	border: 1px solid #e0e0e0;
-	box-sizing: border-box;
-}
 
 
 .archive .entry {
@@ -52,12 +51,6 @@
 .post-type-archive article:hover {
 	border: 1px solid grey;
 	background: #e2e2e2;
-}
-
-.blog article:nth-of-type(3n+1),
-.page-template-page_blog article:nth-of-type(3n+1),
-.post-type-archive article:nth-of-type(3n+1) { 
-	clear: both;
 }
 
 /* Enable images to appear to be the same height */
@@ -137,10 +130,57 @@ ul.a2z li a span.count {
         overflow: hidden;
 
     }
-@media screen and ( max-width: 768px ) {
+		
 
+@media screen and ( min-width: 480px ) {
+
+.blog article {
+	width: 100%;
+	
+	border: 1px solid #e0e0e0;
+	
+}
+
+article.oik-plugins img { 
+	width: 100%;
+	
+
+}
+		
+
+@media screen and ( min-width: 768px ) {
+
+.blog article {
+	width: 49%;
+}
+
+.blog article:nth-of-type( 2n+1 ) {
+	clear: both;
+} 
+
+}
+
+
+@media screen and ( min-width: 1024px ) {
+
+.blog article,
+.page-template-page_blog article, 
 .post-type-archive article {
-	width: 48%;
+	width: 31.3333%; 
+}
+
+
+
+.blog article:nth-of-type( 2n+1 ) {
+	clear: none;
+}
+
+
+
+.blog article:nth-of-type(3n+1),
+.page-template-page_blog article:nth-of-type(3n+1),
+.post-type-archive article:nth-of-type(3n+1) { 
+	clear: both;
 }
 
 }
@@ -148,11 +188,4 @@ ul.a2z li a span.count {
 
 
 
-@media screen and ( max-width: 480px ) {
-
-.post-type-archive article {
-	width: 98%;
-}
-
-}
 
