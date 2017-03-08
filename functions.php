@@ -86,8 +86,6 @@ function goik_footer_creds_text( $text ) {
 	$text .= ' <a href="//www.bobbingwide.com" title="Bobbing Wide - web design, web development">[bw]</a>';
 	$text .= '<br />';
 	$text .= '[bw_power] and oik-plugins';
-	$text .= '<br />';
-	$text .= '[wp v p m]';
   return( $text );
 }
 
