@@ -495,7 +495,7 @@ td img { max-width: 14px; }
 .site-inner,
 .wrap {
 	margin: 0 auto;
-	max-width: 1200px;
+	max-width: 96%;
 }
 
 .site-inner {
@@ -1152,7 +1152,7 @@ img.alignright,
 	background-color: #fff;
 	
 	margin: 0 auto;
-	max-width: 1200px;
+	max-width: 96%;
 }
 
 
@@ -1462,7 +1462,7 @@ li.comment {
 
 	.site-inner,
 	.wrap {
-		max-width: 960px;
+		max-width: 96%;
 	}
 
 	.content-sidebar-sidebar .content-sidebar-wrap,
@@ -1562,7 +1562,7 @@ li.comment {
 
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 768px) {
 
 	body {
 		background-color: #fff;
@@ -1571,8 +1571,8 @@ li.comment {
 
 	.site-inner,
 	.wrap {
-		padding-left: 5%;
-		padding-right: 5%;
+		padding-left: 1%;
+		padding-right: 0%;
 	}
 
 	.archive-description,
