@@ -3,8 +3,8 @@ Contributors: bobbingwide
 Donate link: http://www.oik-plugins.com/oik/oik-donate/
 Tags: genesis, one-column, two-columns, sidebars, responsive-layout, accessibility-ready, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments
 Requires at least: 4.6.3
-Tested up to: 4.7.2
-Version: 1.0.7
+Tested up to: 4.7.3
+Version: 1.0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,8 +31,16 @@ genesis-oik is a child theme for the Genesis Theme Framework
 
 
 == Change Log ==
+= 1.0.8 =
+* Changed: Use Monospace font for archive pagination under 480px
+* Changed: Continue switching to mobile first with responsive widths
+* Changed: Improve footer widgets for iPhone 4 and iPad
+* Changed: Move [wp v p m] from footer credits. Implement in a grandchild plugin.
+* Changed: front-page.css to mobile first
+* Changed: Use front-page.css rather than archive.css to style page_blog.php and home.php
+
 = 1.0.7 = 
-* Fixed: Disables WordPress's custom CSS [github bobbingwide genesis-oik issues 5]
+* Fixed: Disabled WordPress's custom CSS [github bobbingwide genesis-oik issues 5]
 * Changed: Uses front-page.css rather than archive.css to style home.php and page_blog.php 
 * Tested: Added PHPUnit tests for issue 5.
 * Tested: With WordPress 4.7.2
