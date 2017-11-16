@@ -649,9 +649,6 @@ div.bd-600 { min-height: 600px; }
 	text-decoration: underline;
 }
 
-
-
-
 .author-box div.gravatar span.label,
 .author-box div.gravatar span.sep,
 .author-box div.description span.label,
@@ -668,6 +665,10 @@ div.bd-600 { min-height: 600px; }
 
 .bw_accordion .ui-widget-content a.bw_link {
 	color: #6a6a2a; 
+}
+
+div.plugin-body table.bw_table {
+	font-size: 13px;
 }
 	
 
