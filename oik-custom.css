@@ -667,9 +667,28 @@ div.bd-600 { min-height: 600px; }
 	color: #6a6a2a; 
 }
 
-div.plugin-body table.bw_table {
+div.plugin-body table.bw_table,
+article.shortcode_example table.bw_table {
 	font-size: 13px;
 }
+
+p.bw_code_snippet,
+p.bw_code_example { 
+	margin-top: 1em;
+	font-weight: bold; 
+}
+
+p:lang(HTML) { font-size: 80% }
+
+.entry-content table.bw_table ul > li {
+	list-style-type: none;
+}
+
+td.modified,
+td.date { 
+	width: 70px;
+}
+	
 	
 
 
