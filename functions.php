@@ -11,7 +11,7 @@ function genesis_oik_functions_loaded() {
 
 	//* Child theme (do not remove) - is this really necessary? 
 	define( 'CHILD_THEME_NAME', 'Genesis OIK' );
-	define( 'CHILD_THEME_URL', 'http://www.bobbingwide.com/oik-themes/genesis-oik' );
+	define( 'CHILD_THEME_URL', 'https://www.oik-plugins.com/oik-themes/genesis-oik' );
 	
 	if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
 		$timestamp = filemtime( get_stylesheet_directory() . "/style.css" );
@@ -111,7 +111,7 @@ function goik_footer_creds_text( $text ) {
  */
 function genesis_oik_register_sidebars() {
   //bw_backtrace();
-  $cpts = array( "oik-plugins", "oik_shortcodes", "shortcode_example", "download", "oik_pluginversion", "oik-themes" );
+  $cpts = array( "oik-plugins", "oik_shortcodes", "shortcode_example", "download", "oik_pluginversion", "oik-themes", "block", "block_example" );
   $theme_widget_args = array( );
   foreach ( $cpts as $cpt ) {
     $theme_widget_args['group'] = 'default';
