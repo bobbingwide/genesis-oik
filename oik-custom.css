@@ -720,6 +720,15 @@ td.modified,
 td.date { 
 	width: 70px;
 }
+
+/**
+ * Style a Block example
+ */
+
+article.block div.bw_metadata.featured img {
+    border : 2px dotted grey;
+    margin-bottom: 20px;
+}
 	
 	
 
