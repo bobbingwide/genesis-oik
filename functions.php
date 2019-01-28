@@ -1,4 +1,4 @@
-<?php // (C) Copyright Bobbing Wide 2015-2017
+<?php // (C) Copyright Bobbing Wide 2015-2019
 
 genesis_oik_functions_loaded();
 
@@ -98,6 +98,8 @@ function goik_footer_creds_text( $text ) {
  * "oik_pluginversion"
  * "shortcode_example"
  * "download"
+ * "block"
+ * "block_example"
  *
  * We don't display sidebars for
  * 
@@ -288,11 +290,14 @@ function genesis_oik_a2z_display_args() {
 function genesis_oik_a2z_query_letter_taxonomy( $taxonomy, $args ) {
 	$post_type = bw_array_get( $args, "post_type", null );
 	if ( $post_type ) {
-		$oik_letters = array( "oik_shortcodes" => "oik_letters"
+		$oik_letters = array( "oik_shortcodes" => "letters"
 												, "oik_api" => "oik_letters"
 												, "oik_class" => "oik_letters"
 												, "oik_file" => "oik_letters"
 												, "oik_hook" => "oik_letters"
+			, "block" => "letters"
+			, "block_example" => "letters"
+			, "shortcode_example" => "letters"
 												);
 		$taxonomy = bw_array_get( $oik_letters, $post_type, $taxonomy );
 	}
