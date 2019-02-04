@@ -12,12 +12,12 @@ function genesis_oik_functions_loaded() {
 	//* Child theme (do not remove) - is this really necessary? 
 	define( 'CHILD_THEME_NAME', 'Genesis OIK' );
 	define( 'CHILD_THEME_URL', 'https://www.oik-plugins.com/oik-themes/genesis-oik' );
-	
-	if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+
+	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
 		$timestamp = filemtime( get_stylesheet_directory() . "/style.css" );
 		define( 'CHILD_THEME_VERSION', $timestamp );
 	} else { 
-		define( 'CHILD_THEME_VERSION', '1.0.3' );
+		define( 'CHILD_THEME_VERSION', '1.1.1' );
 	}
 	
 	// Start the engine. This is necessary if we want to use genesis_ APIs at initial load
