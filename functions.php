@@ -68,6 +68,11 @@ function genesis_oik_functions_loaded() {
 	
 	add_filter( "the_title", "genesis_oik_the_title", 9, 2 );
 
+	/** Allows some blocks to have alignwide or alignfull */
+
+	add_theme_support( "align-wide");
+
+
 }
 
 /**
