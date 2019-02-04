@@ -1,12 +1,12 @@
 /*   
 Theme Name: Genesis OIK
-Theme URI: http://www.oik-plugins.com/oik-themes/genesis-oik
+Theme URI: https://www.oik-plugins.com/oik-themes/genesis-oik
 Description: Child theme of genesis framework with oik and image.php
 Author: Bobbing Wide  
-Author URI: http://www.oik-plugins.com/author/bobbingwide
-Version: 1.0.8
+Author URI: https://www.oik-plugins.com/author/bobbingwide
+Version: 1.1.1
 Template: genesis 
-Template Version: 2.4.2 
+Template Version: 2.8.1
 Tags: oik, plugins, themes, shortcodes 
 License: GPL-2.0+  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
@@ -214,6 +214,8 @@ blockquote {
 	margin: 40px;
 }
 
+/**
+
 blockquote::before {
 	content: "\201C";
 	display: block;
@@ -222,6 +224,12 @@ blockquote::before {
 	left: -20px;
 	position: relative;
 	top: -10px;
+}
+*/
+.wp-block-pullquote {
+	border-top: 4px solid #555d66;
+	border-bottom: 4px solid #555d66;
+	color: #40464d;
 }
 
 
