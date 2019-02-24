@@ -300,8 +300,8 @@ function genesis_oik_a2z_query_letter_taxonomy( $taxonomy, $args ) {
 												, "oik_class" => "oik_letters"
 												, "oik_file" => "oik_letters"
 												, "oik_hook" => "oik_letters"
-			, "block" => "letters"
-			, "block_example" => "letters"
+			, "block" => "block_letters"
+			, "block_example" => "block_letters"
 			, "shortcode_example" => "letters"
 												);
 		$taxonomy = bw_array_get( $oik_letters, $post_type, $taxonomy );
