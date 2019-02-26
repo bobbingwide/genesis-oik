@@ -2,9 +2,9 @@
 Contributors: bobbingwide
 Donate link: http://www.oik-plugins.com/oik/oik-donate/
 Tags: genesis, one-column, two-columns, sidebars, responsive-layout, accessibility-ready, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments
-Requires at least: 4.6.3
-Tested up to: 4.7.3
-Version: 1.0.8
+Requires at least: 5.0.3
+Tested up to: 5.0.3
+Version: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,17 @@ genesis-oik is a child theme for the Genesis Theme Framework
 
 
 == Change Log ==
+= 1.2.0 = 
+* Changed: Change letter pagination for blocks and block examples, [github bobbingwide genesis-oik issues 12]
+
+= 1.1.1 =
+* Changed: Adjust theme for Gutenberg compatibility, [github bobbingwide genesis-oik issues 13]
+* Changed: Adjust letter taxonomy for CPTs, [github bobbingwide genesis-oik issues 12]
+* Added: Add templates for single-block and single-block_example, [github bobbingwide genesis-oik issues 12]
+* Changed: Support styling of large SVG dash icons. e.g [bw_dash icon svg64].,[github bobbingwide genesis-oik issues 12]
+* Changed: Improve styling of some shortcode examples, [github bobbingwide genesis-oik issues 10]
+* Fixed: Smaller body size for the plugin's change log, [github bobbingwide genesis-oik issues 9]
+
 = 1.0.8 =
 * Changed: Use Monospace font for archive pagination under 480px
 * Changed: Continue switching to mobile first with responsive widths
