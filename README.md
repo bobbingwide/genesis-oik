@@ -4,8 +4,8 @@
 * Donate link: http://www.oik-plugins.com/oik/oik-donate/
 * Tags: genesis, one-column, two-columns, sidebars, responsive-layout, accessibility-ready, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments
 * Requires at least: 5.0.3
-* Tested up to: 5.0.3
-* Version: 1.2.0
+* Tested up to: 5.1.0
+* Version: 1.2.1
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,6 +32,10 @@ genesis-oik is a child theme for the Genesis Theme Framework
 
 
 ## Change Log 
+# 1.2.1 
+* Changed: Updated styling for author-box
+* Changed: Support styling for plugin dependency field
+
 # 1.2.0 
 * Changed: Change letter pagination for blocks and block examples, https://github.com/bobbingwide/genesis-oik/issues/12
 
@@ -103,7 +107,7 @@ genesis-oik is a child theme for the Genesis Theme Framework
 * Added: Other styling delivered in oik-custom.css - from oik-plugins.com
 
 ## Copyright 
-(C) Copyright Bobbing Wide 2015-2017
+(C) Copyright Bobbing Wide 2015-2019
 
 * This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
