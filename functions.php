@@ -17,7 +17,7 @@ function genesis_oik_functions_loaded() {
 		$timestamp = filemtime( get_stylesheet_directory() . "/style.css" );
 		define( 'CHILD_THEME_VERSION', $timestamp );
 	} else { 
-		define( 'CHILD_THEME_VERSION', '1.1.1' );
+		define( 'CHILD_THEME_VERSION', '1.2.1' );
 	}
 	
 	// Start the engine. This is necessary if we want to use genesis_ APIs at initial load

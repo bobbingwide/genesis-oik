@@ -4,7 +4,7 @@ Theme URI: https://www.oik-plugins.com/oik-themes/genesis-oik
 Description: Child theme of genesis framework with oik and image.php
 Author: Bobbing Wide  
 Author URI: https://www.oik-plugins.com/author/bobbingwide
-Version: 1.2.0
+Version: 1.2.1
 Template: genesis 
 Template Version: 2.8.1
 Tags: oik, plugins, themes, shortcodes 
@@ -695,6 +695,16 @@ td img { max-width: 14px; }
 	margin-bottom: 0;
 }
 
+.author-box .bw_user-fields-0 {
+	width: 33%;
+}
+.author-box .bw_user-fields-0.gravatar {
+	width: 20%;
+}
+.author-box .bw_user-fields-1 {
+	width: 67%;
+}
+
 /* ## Search Form
 --------------------------------------------- */
 
@@ -1371,6 +1381,13 @@ li.comment {
 	margin-bottom: 40px;
 	padding: 20px;
 }
+
+._oikp_dependency li {
+	border-bottom: none;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
 
 
 /* # Footer Widgets

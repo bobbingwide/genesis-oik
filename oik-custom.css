@@ -684,7 +684,9 @@ div.bd-600 { min-height: 600px; }
 .author-box div.gravatar span.label,
 .author-box div.gravatar span.sep,
 .author-box div.description span.label,
-.author-box div.description span.sep { 
+.author-box div.description span.sep,
+.author-box div.follow_me span.label,
+.author-box div.follow_me span.sep {
 	display: none; 
 }
 
