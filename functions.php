@@ -44,9 +44,9 @@ function genesis_oik_functions_loaded() {
 	//* Add support for 5-column footer widgets - requires extra CSS
 	add_theme_support( 'genesis-footer-widgets', 5 );
 
-	add_filter( 'genesis_footer_creds_text', "goik_footer_creds_text" );
+	add_filter( 'genesis_pre_get_option_footer_text', "goik_footer_creds_text" );
 	
-  add_filter( 'genesis_pre_get_option_site_layout', 'genesis_oik_pre_get_option_site_layout', 10, 2 );
+  //add_filter( 'genesis_pre_get_option_site_layout', 'genesis_oik_pre_get_option_site_layout', 10, 2 );
 	
 	remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 	
@@ -71,6 +71,11 @@ function genesis_oik_functions_loaded() {
 	/** Allows some blocks to have alignwide or alignfull */
 
 	add_theme_support( "align-wide");
+	// Load regular editor styles into the new block-based editor.
+	//add_theme_support( 'editor-styles' );
+
+	// Load default block styles.
+	//add_theme_support( 'wp-block-styles' );
 
 
 }
@@ -79,6 +84,7 @@ function genesis_oik_functions_loaded() {
  * Display footer credits for the oik theme
  */	
 function goik_footer_creds_text( $text ) {
+
 	/**
 	 * Cause shortcodes to be registered.
 	 */
@@ -91,6 +97,7 @@ function goik_footer_creds_text( $text ) {
 	$text .= ' <a href="//www.bobbingwide.com" title="Bobbing Wide - web design, web development">[bw]</a>';
 	$text .= '<br />';
 	$text .= '[bw_power] and oik-plugins';
+
   return( $text );
 }
 
