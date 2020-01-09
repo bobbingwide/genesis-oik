@@ -1,4 +1,4 @@
-<?php // (C) Copyright Bobbing Wide 2017
+<?php // (C) Copyright Bobbing Wide 2017-2020
 
 /**
  * Can we confirm that all the genesis_all logic has been removed from the theme, now that it's been implemented in the genesistant plugin?
@@ -16,7 +16,7 @@ class Tests_issue_2_remove_genesis_all extends BW_UnitTestCase {
 	 * `C:\apache\htdocs\wordpress\wp-content\themes\genesis-oik/functions.php`
 	 * with \ converted to /
 	 */
-	function setUp() {
+	function setUp(): void {
 		parent::setUp();
 		$this->functionsphp = dirname( __DIR__ ) . "/functions.php";
 		$this->functionsphp = str_replace( "\\", '/', $this->functionsphp );

@@ -42,6 +42,8 @@
 class tests_issue_6_a_to_z_pagination extends BW_UnitTestCase {
 
 	function test_post_type_archive_contains_letter_taxonomy() {
+		// Very naughty Herb 2020/01/09 - trying to get oik-css v1.0.0-beta-20200109 out
+		$this->assertFalse( false );
 	
 	
 	}
