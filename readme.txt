@@ -33,6 +33,7 @@ genesis-oik is a child theme for the Genesis Theme Framework
 == Change Log ==
 = 1.2.2 = 
 * Changed: Compatible with Genesis v3.2.1,[github bobbingwide genesis-oik issues 14]
+* Changed: Update for PHPUnit 8.[github bobbingwide genesis-oik issues 15]
 
 = 1.2.1 =
 * Changed: Updated styling for author-box
@@ -109,7 +110,7 @@ genesis-oik is a child theme for the Genesis Theme Framework
 * Added: Other styling delivered in oik-custom.css - from oik-plugins.com
 
 == Copyright ==
-(C) Copyright Bobbing Wide 2015-2019
+(C) Copyright Bobbing Wide 2015-2020
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
