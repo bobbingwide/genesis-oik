@@ -1,4 +1,4 @@
-<?php // (C) Copyright Bobbing Wide 2017-2020
+<?php // (C) Copyright Bobbing Wide 2017-2021
 
 /**
  * Can we confirm that all the genesis_all logic has been removed from the theme, now that it's been implemented in the genesistant plugin?
@@ -18,8 +18,13 @@ class Tests_issue_2_remove_genesis_all extends BW_UnitTestCase {
 	 */
 	function setUp(): void {
 		parent::setUp();
-		$this->functionsphp = dirname( __DIR__ ) . "/functions.php";
-		$this->functionsphp = str_replace( "\\", '/', $this->functionsphp );
+		$stylesheet=get_stylesheet();
+		if ( 'genesis-oik' === $stylesheet ) {
+			$this->functionsphp=dirname( __DIR__ ) . "/functions.php";
+			$this->functionsphp=str_replace( "\\", '/', $this->functionsphp );
+		} else {
+			echo "Stylesheet is $stylesheet";
+		}
 	}
 	
 	/**
@@ -36,6 +41,14 @@ class Tests_issue_2_remove_genesis_all extends BW_UnitTestCase {
 		$isfunctionsphp = false;
 		$isfunctionsphp = $infile == $this->functionsphp;
 		return( $isfunctionsphp );
+	}
+
+	/**
+	 * The current theme has to be genesis-oik otherwise the tests will fail.
+	 */
+	function test_a_current_theme_is_genesis_oik() {
+		$stylesheet = get_stylesheet();
+		$this->assertEquals( 'genesis-oik', $stylesheet, "Current stylesheet is not genesis-oik" );
 	}
 	
 	/**
