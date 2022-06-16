@@ -16,7 +16,7 @@
  * - Published by
  */
 function genesis_oik_single_post() {
-	add_theme_support( 'html5' );
+	//add_theme_support( 'html5' );
 	
 	add_post_type_support( "post", 'genesis-after-entry-widget-area' );
 	add_post_type_support( "post", "genesis-entry-meta-after-content" );
