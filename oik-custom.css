@@ -731,7 +731,11 @@ article.block div.bw_metadata.featured img {
     border : 2px dotted grey;
     margin-bottom: 20px;
 }
-	
-	
 
-
+/**
+ Style the footer added by oik-thugin
+ */
+div.more {
+    width: 50%;
+    margin: 0px auto;
+}
