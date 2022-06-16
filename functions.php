@@ -77,6 +77,12 @@ function genesis_oik_functions_loaded() {
 	// Load default block styles.
 	//add_theme_support( 'wp-block-styles' );
 
+    add_filter( 'should_load_separate_core_block_assets', '__return_true' );
+    add_action( 'wp_enqueue_scripts', 'genesis_oik_enqueue_scripts_styles' );
+
+    add_filter( 'smilies', 'genesis_oik_smilies');
+
+
 
 }
 
@@ -364,6 +370,16 @@ function genesis_oik_the_title( $text, $id ) {
 		}
 	}	
 	return( $text );
-} 
+}
+
+function genesis_oik_smilies( $smilies ) {
+	$smilies[':home:'] = $smilies[':mrgreen:'];
+	return $smilies;
+}
+
+function genesis_oik_enqueue_scripts_styles() {
+    //wp_enqueue_style( 'dashicons' );
+
+}
 
 
