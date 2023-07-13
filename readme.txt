@@ -3,8 +3,8 @@ Contributors: bobbingwide
 Donate link: http://www.oik-plugins.com/oik/oik-donate/
 Tags: genesis, one-column, two-columns, sidebars, responsive-layout, accessibility-ready, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments
 Requires at least: 5.3
-Tested up to: 6.0
-Version: 1.3.0
+Tested up to: 6.2.2
+Version: 1.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,12 @@ genesis-oik is a child theme for the Genesis Theme Framework
 
 
 == Change Log ==
+= 1.3.1 =
+* Added: Add theme.json #17
+* Added: Enable ACF local JSON #18
+* Tested: With WordPress 6.2.2 and WordPress Multi Site
+* Tested: With PHP 8.0
+
 = 1.3.0 =
 * Changed: Add some styling for div.more. Not sure why there are 2 versions!
 * Changed: Tell Gutenberg to load separate core block assets. Add a smiley. Don't enqueue dashicons
