@@ -1,11 +1,11 @@
 # genesis-oik 
-![screenshot](https://raw.githubusercontent.com/bobbingwide/genesis-oik/master/screenshot.png)
+![screenshot](screenshot.png)
 * Contributors: bobbingwide
 * Donate link: http://www.oik-plugins.com/oik/oik-donate/
 * Tags: genesis, one-column, two-columns, sidebars, responsive-layout, accessibility-ready, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments
 * Requires at least: 5.3
-* Tested up to: 5.3.1
-* Version: 1.2.2
+* Tested up to: 6.0
+* Version: 1.3.0
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,9 +32,20 @@ genesis-oik is a child theme for the Genesis Theme Framework
 
 
 ## Change Log 
+# 1.3.0 
+* Changed: Add some styling for div.more. Not sure why there are 2 versions!
+* Changed: Tell Gutenberg to load separate core block assets. Add a smiley. Don't enqueue dashicons
+* Changed: Avoid Notice by not calling add_theme_support('html5') Fixes #16
+* Changed: Update PHPUnit test results - testing with PHP 8, PHPUnit 9 and WordPress 5.7-beta3
+* Changed: Remove background colour for the <code> tag
+* Changed: Update tests to check genesis-oik is the active (child) theme
+* Fixed: Fix punctuation typo
+* Tested: With WordPress 6.0 and WordPress Multi Site
+* Tested: With PHP 8.0
+
 # 1.2.2 
 * Changed: Compatible with Genesis v3.2.1,https://github.com/bobbingwide/genesis-oik/issues/14
-* Changed: Update for PHPUnit 8.https://github.com/bobbingwide/genesis-oik/issues/15
+* Changed: Update for PHPUnit 8,https://github.com/bobbingwide/genesis-oik/issues/15
 
 # 1.2.1 
 * Changed: Updated styling for author-box

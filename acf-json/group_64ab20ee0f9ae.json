@@ -1,0 +1,63 @@
+{
+    "key": "group_64ab20ee0f9ae",
+    "title": "Google Maps",
+    "fields": [
+        {
+            "key": "field_64ab20ee0e6cb",
+            "label": "Google Map 1",
+            "name": "google_map_1",
+            "aria-label": "",
+            "type": "google_map",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "center_lat": "",
+            "center_lng": "",
+            "zoom": 10,
+            "height": ""
+        },
+        {
+            "key": "field_64ab211c0e6cc",
+            "label": "Google Map 2",
+            "name": "google_map_2",
+            "aria-label": "",
+            "type": "google_map",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "center_lat": "",
+            "center_lng": "",
+            "zoom": "",
+            "height": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "block_example"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Two different Google Maps fields. With different Zoom levels 10 and 16",
+    "show_in_rest": 0,
+    "modified": 1689252150
+}

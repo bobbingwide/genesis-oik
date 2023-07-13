@@ -1,0 +1,207 @@
+{
+    "key": "group_64ac30b582161",
+    "title": "Clone",
+    "fields": [
+        {
+            "key": "field_64ac359853cbf",
+            "label": "Clone - seamless",
+            "name": "clone_-_seamless",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "field_64ac34578821f",
+                "field_64ac347588220"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0,
+            "sub_fields": [
+                {
+                    "ID": 49227,
+                    "key": "field_64ac359853cbf_field_64ac34578821f",
+                    "label": "Cloneable text",
+                    "name": "cloneable_text",
+                    "aria-label": "",
+                    "prefix": "acf[field_64ac359853cbf]",
+                    "type": "text",
+                    "value": null,
+                    "menu_order": 0,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": 0,
+                    "parent": 49217,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "_name": "cloneable_text",
+                    "_valid": 1,
+                    "_clone": "field_64ac359853cbf",
+                    "__key": "field_64ac34578821f",
+                    "__name": "cloneable_text",
+                    "__label": "Cloneable text"
+                },
+                {
+                    "ID": 49228,
+                    "key": "field_64ac359853cbf_field_64ac347588220",
+                    "label": "Cloneable text area",
+                    "name": "cloneable_text_area",
+                    "aria-label": "",
+                    "prefix": "acf[field_64ac359853cbf]",
+                    "type": "textarea",
+                    "value": null,
+                    "menu_order": 1,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": 0,
+                    "parent": 49217,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "placeholder": "",
+                    "new_lines": "",
+                    "_name": "cloneable_text_area",
+                    "_valid": 1,
+                    "_clone": "field_64ac359853cbf",
+                    "__key": "field_64ac347588220",
+                    "__name": "cloneable_text_area",
+                    "__label": "Cloneable text area"
+                }
+            ]
+        },
+        {
+            "key": "field_64ac35189805a",
+            "label": "Clone - group",
+            "name": "clone_-_group",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "field_64ac34c29ef99",
+                "field_64ac34d19ef9a"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0,
+            "sub_fields": [
+                {
+                    "ID": 49229,
+                    "key": "field_64ac34c29ef99",
+                    "label": "Cloneable text 2",
+                    "name": "cloneable_text_2",
+                    "aria-label": "",
+                    "prefix": "acf",
+                    "type": "text",
+                    "value": null,
+                    "menu_order": 2,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": 0,
+                    "parent": 49226,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "_name": "cloneable_text_2",
+                    "_valid": 1,
+                    "_clone": "field_64ac35189805a",
+                    "__key": "field_64ac34c29ef99",
+                    "__name": "cloneable_text_2",
+                    "__label": "Cloneable text 2"
+                },
+                {
+                    "ID": 49230,
+                    "key": "field_64ac34d19ef9a",
+                    "label": "Cloneable text area 2",
+                    "name": "cloneable_text_area_2",
+                    "aria-label": "",
+                    "prefix": "acf",
+                    "type": "textarea",
+                    "value": null,
+                    "menu_order": 3,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": 0,
+                    "parent": 49226,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "placeholder": "",
+                    "new_lines": "",
+                    "_name": "cloneable_text_area_2",
+                    "_valid": 1,
+                    "_clone": "field_64ac35189805a",
+                    "__key": "field_64ac34d19ef9a",
+                    "__name": "cloneable_text_area_2",
+                    "__label": "Cloneable text area 2"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "block_example"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Clone group: Seamless and Grouped",
+    "show_in_rest": 0,
+    "modified": 1689252147
+}
