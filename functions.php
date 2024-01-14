@@ -81,6 +81,8 @@ function genesis_oik_functions_loaded() {
     add_action( 'wp_enqueue_scripts', 'genesis_oik_enqueue_scripts_styles' );
 
     add_filter( 'smilies', 'genesis_oik_smilies');
+	remove_action( 'embed_head', 'wp_print_styles', 20 );
+
 
 
 
