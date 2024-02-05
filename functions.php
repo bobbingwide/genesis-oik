@@ -305,11 +305,13 @@ function genesis_oik_a2z_display_args() {
 /**
  * Returns the Letter taxonomy associated to the post type
  * 
- * If post_type is not set then we return the 
+ * If post_type is not set then we return the original taxonomy
+ * If the post_type is an array we return the original taxonomy
  */ 
 function genesis_oik_a2z_query_letter_taxonomy( $taxonomy, $args ) {
+	bw_trace2();
 	$post_type = bw_array_get( $args, "post_type", null );
-	if ( $post_type ) {
+	if ( $post_type && !is_array( $post_type ) ) {
 		$oik_letters = array( "oik_shortcodes" => "letters"
 												, "oik_api" => "oik_letters"
 												, "oik_class" => "oik_letters"
