@@ -49,7 +49,7 @@
                 "green": "Green"
             },
             "default_value": [],
-            "return_format": "value",
+            "return_format": "array",
             "allow_custom": 0,
             "layout": "vertical",
             "toggle": 0,
@@ -73,7 +73,7 @@
             "choices": {
                 "red": "Red",
                 "amber": "Amber",
-                "green: Green": "green: Green"
+                "green": "Green"
             },
             "default_value": "",
             "return_format": "value",
@@ -134,6 +134,13 @@
                 "operator": "==",
                 "value": "block_example"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
         ]
     ],
     "menu_order": 0,
@@ -145,5 +152,5 @@
     "active": true,
     "description": "Choice type fields: 5 field types to choose from",
     "show_in_rest": 0,
-    "modified": 1689252146
+    "modified": 1689796029
 }
