@@ -1,6 +1,12 @@
-<?php // (C) Copyright Bobbing Wide 2015-2019
+<?php // (C) Copyright Bobbing Wide 2015-2019, 2024
 
-genesis_oik_functions_loaded();
+//* Rename Primary Menu
+add_theme_support ( 'genesis-menus' , array ( 'primary' =>  'Header Navigation Menu', 'secondary' => 'Before Header Navigation Menu' ) );
+
+
+
+add_action( 'after_setup_theme', 'genesis_oik_functions_loaded');
+// genesis_oik_functions_loaded();
 
 /**
  * Function to invoke when genesis-oik is loaded
