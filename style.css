@@ -4,9 +4,9 @@ Theme URI: https://www.oik-plugins.com/oik-themes/genesis-oik
 Description: Child theme of genesis framework with oik and image.php
 Author: Bobbing Wide  
 Author URI: https://www.oik-plugins.com/author/bobbingwide
-Version: 1.4.0
+Version: 1.5.0
 Template: genesis 
-Template Version: 3.5.1-beta1
+Template Version: 3.6.1
 Tags: oik, plugins, themes, shortcodes 
 License: GPL-2.0+  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
@@ -180,7 +180,7 @@ a:hover {
 }
 
 a.button {
-	background-color: #baba54;
+	background-color: #5b5b25;
 }	
 
 p {
@@ -422,7 +422,7 @@ input[type="submit"],
 .footer-widgets input[type="reset"],
 .footer-widgets input[type="submit"],
 .footer-widgets .button {
-	background-color: #e5554e;
+	background-color: #a92019;
 	color: #fff;
 }
 
@@ -431,7 +431,7 @@ input:hover[type="button"],
 input:hover[type="reset"],
 input:hover[type="submit"],
 .button:hover {
-	background-color: #5b6021;
+	background-color: #353813;
 	color: #fff;
 }
 
@@ -1484,6 +1484,43 @@ li.comment {
 
 .site-footer p {
 	margin-bottom: 0;
+}
+
+/* ## Screen reader text
+--------------------------------------------- */
+
+.screen-reader-text,
+.screen-reader-text span,
+.screen-reader-shortcut {
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+.screen-reader-text:focus,
+.screen-reader-shortcut:focus,
+.genesis-nav-menu .search input[type="submit"]:focus,
+.widget_search input[type="submit"]:focus  {
+	background: #fff;
+	box-shadow: 0 0 2px 2px rgba(0,0,0,.6);
+	clip: auto !important;
+	color: #333;
+	display: block;
+	font-size: 1em;
+	font-weight: bold;
+	height: auto;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
+.more-link {
+	position: relative;
 }
 
 

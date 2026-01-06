@@ -1,7 +1,8 @@
-<?php // (C) Copyright Bobbing Wide 2015-2019, 2024
+<?php // (C) Copyright Bobbing Wide 2015-2019, 2024, 2025, 2026
 
 //* Rename Primary Menu
 add_theme_support ( 'genesis-menus' , array ( 'primary' =>  'Header Navigation Menu', 'secondary' => 'Before Header Navigation Menu' ) );
+add_theme_support( 'genesis-seo-settings-menu');
 
 
 
@@ -23,7 +24,7 @@ function genesis_oik_functions_loaded() {
 		$timestamp = filemtime( get_stylesheet_directory() . "/style.css" );
 		define( 'CHILD_THEME_VERSION', $timestamp );
 	} else { 
-		define( 'CHILD_THEME_VERSION', '1.2.2' );
+		define( 'CHILD_THEME_VERSION', '1.5.0' );
 	}
 	
 	// Start the engine. This is necessary if we want to use genesis_ APIs at initial load
@@ -89,6 +90,22 @@ function genesis_oik_functions_loaded() {
     add_filter( 'smilies', 'genesis_oik_smilies');
 	remove_action( 'embed_head', 'wp_print_styles', 20 );
 
+	//* Enable Genesis Accessibility Components
+// See https://my.studiopress.com/documentation/snippets/accessibility/enable-accessibility-features/
+	add_theme_support( 'genesis-accessibility', array(
+		'404-page',
+		'drop-down-menu',
+		'headings',
+		'rems',
+		'search-form',
+		'skip-links',
+	) );
+
+	/** Accessibility (a11y) improvements? */
+	add_filter( 'genesis_site_title_wrap', 'genesis_oik_site_title_wrap', 10);
+	add_filter( 'genesis_seo_title', 'genesis_oik_seo_title', 10, 3 );
+	add_filter( "genesis_edit_post_link", "__return_false" );
+
 
 
 
@@ -145,7 +162,9 @@ function genesis_oik_register_sidebars() {
     $theme_widget_args['group'] = 'default';
     $theme_widget_args['id'] = "$cpt-widget-area";
     $theme_widget_args['name'] = "$cpt widget area";
-    $theme_widget_args['description'] = "sidebar for $cpt";  
+    $theme_widget_args['description'] = "sidebar for $cpt";
+	$theme_widget_args['before_title'] = '<h3 class="widget-title widgettitle">';
+	$theme_widget_args['after_title'] = "</h3>\n";
     genesis_register_sidebar( $theme_widget_args );
   }
 }
@@ -213,10 +232,11 @@ function genesis_oik_post_info() {
 function genesis_oik_get_sidebar() {
 	//* Output primary sidebar structure
 	genesis_markup( array(
-		'html5'   => '<aside %s>',
+		'html5'   => '<aside %s>' . genesis_sidebar_title( 'sidebar' ),
 		'xhtml'   => '<div id="sidebar" class="sidebar widget-area">',
 		'context' => 'sidebar-primary',
 	) );
+
 	do_action( 'genesis_before_sidebar_widget_area' );
 	$post_type = get_post_type();
 	$cpts = array( "oik_premiumversion" => "oik_pluginversion-widget-area" 
@@ -231,7 +251,7 @@ function genesis_oik_get_sidebar() {
 		'html5' => '</aside>', //* end .sidebar-primary
 		'xhtml' => '</div>', //* end #sidebar
 	) );
-} 
+}
 
 /**
  * Implement 'genesis_oik_pre_get_option_site_layout' filter 
@@ -313,6 +333,7 @@ function genesis_oik_a2z_display_args() {
  * 
  * If post_type is not set then we return the original taxonomy
  * If the post_type is an array we return the original taxonomy
+ *
  */ 
 function genesis_oik_a2z_query_letter_taxonomy( $taxonomy, $args ) {
 	bw_trace2();
@@ -388,8 +409,21 @@ function genesis_oik_smilies( $smilies ) {
 }
 
 function genesis_oik_enqueue_scripts_styles() {
-    //wp_enqueue_style( 'dashicons' );
+	//wp_enqueue_style( 'dashicons' );
 
+}
+function genesis_oik_site_title_wrap( $wrap ) {
+	bw_trace2();
+	bw_backtrace();
+	//return $wrap;
+	return 'h1';
+}
+
+function genesis_oik_seo_title( $title, $inside, $wrap ) {
+
+	$title = str_replace( 'a href', 'a aria-hidden="true" tabindex="-1" href', $title);
+	bw_trace2( $title, "title after");
+	return $title;
 }
 
 
