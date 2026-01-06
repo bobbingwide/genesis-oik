@@ -72,7 +72,7 @@ a.wordpress,
 .art-blockcontent a.wordpress,
 .art-postcontent a.wordpress { display: inline-block; text-align: center; padding: 0;  color: #fff;
               -moz-border-radius: 3px; border-radius: 3px; border: none; text-shadow: rgba(0,0,0,0.5) 0 1px 0; text-decoration: none; padding: 3%;
-              background: #eb672b; margin: 1% auto; text-align: center; }
+              background: #95390e; margin: 1% auto; text-align: center; }
 a.wordpress:hover { color: #fff; text-decoration: none; }
               
 a.download, 
@@ -248,25 +248,6 @@ div.art-logo-text { font-size: 24px; }
    box-sizing: border-box;
 }
 
-a.wordpress, 
-.art-blockcontent a.wordpress,
-.art-postcontent a.wordpress { display: inline-block; text-align: center; padding: 0;  color: #fff;
-              -moz-border-radius: 3px; border-radius: 3px; border: none; text-shadow: rgba(0,0,0,0.5) 0 1px 0; text-decoration: none; padding: 3%;
-              background: #eb672b; margin: 1% auto; text-align: center; }
-a.wordpress:hover { color: #fff; text-decoration: none; }
-              
-a.download, 
-.art-blockcontent a.download,
-.art-postcontent a.download  { display: inline-block; 
- text-align: center; padding: 0;  color: #fff;
-              -moz-border-radius: 3px; border-radius: 3px; border: none; text-shadow: rgba(0,0,0,0.5) 0 1px 0; text-decoration: none; padding: 3%;
-              margin: 1% auto; text-align: center;
-              background: #5b5f13; }
-/*.art-postcontent a.download { float: right; }               */
-
-a.download span.version { display: block; }
-a.button.download.art-button { color: #ffffff; }
-a.button.download.art-button:hover { color: #ffffff; }
 
 span.bw_plug { display: inline; }
 
@@ -712,7 +693,7 @@ p.bw_code_example {
 	font-weight: bold; 
 }
 
-p:lang(HTML) { font-size: 80% }
+p.escaped_html { font-size: 80%; }
 
 .entry-content table.bw_table ul > li {
 	list-style-type: none;
